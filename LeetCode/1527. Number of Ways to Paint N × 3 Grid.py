@@ -10,10 +10,8 @@ class Solution:
         mod = 10**9 + 7
         p1 = p2 = 6
 
-        for i in range(1, n):
-            np1 = (p1 * 3 + p2 * 2) % mod
-            np2 = (p1 * 2 + p2 * 2) % mod
-            p1, p2 = np1, np2
+        for _ in range(n - 1):
+            p1, p2 = (p1 * 3 + p2 * 2) % mod, (p1 * 2 + p2 * 2) % mod
 
         return (p1 + p2) % mod
 
