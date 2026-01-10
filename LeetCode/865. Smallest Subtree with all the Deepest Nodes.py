@@ -1,7 +1,7 @@
 from lc import *
 # ============================================================
 # 865. Smallest Subtree with all the Deepest Nodes
-# https://leetcode.com/problems/smallest-subtree-with-all-the-deepest-nodes/description/?envType=daily-question&envId=2026-01-09
+# https://leetcode.com/problems/smallest-subtree-with-all-the-deepest-nodes/
 # ============================================================
 
 

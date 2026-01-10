@@ -1,7 +1,7 @@
 from lc import *
 # ============================================================
 # 1465. Maximum Product of Splitted Binary Tree
-# https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/?envType=daily-question&envId=2026-01-07
+# https://leetcode.com/problems/maximum-product-of-splitted-binary-tree/
 # ============================================================
 
 
@@ -56,4 +56,3 @@ The number of nodes in the tree is in the range [2, 5 * 104].
 
 
 """)
-
