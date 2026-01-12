@@ -29,6 +29,46 @@ class Solution:
         return total
 
 
+class Solution:
+    def maximalRectangle(self, matrix: List[List[str]]) -> int:
+        total = 0
+        if not matrix or not matrix[0]:
+            return total
+
+        n, m = len(matrix), len(matrix[0])
+
+        heights = [0] * m
+        left, right = [0] * m, [m] * m
+
+        for i in range(n):
+            curr_left, curr_right = 0, m
+
+            for j in range(m):  # Heights
+                if matrix[i][j] == "1":
+                    heights[j] += 1
+                else:
+                    heights[j] = 0
+
+            for j in range(m):  # Left bounds
+                if matrix[i][j] == "1":
+                    left[j] = max(left[j], curr_left)
+                else:
+                    left[j] = 0
+                    curr_left = j + 1
+
+            for j in range(m - 1, -1, -1):  # Right bounds
+                if matrix[i][j] == "1":
+                    right[j] = min(right[j], curr_right)
+                else:
+                    right[j] = m
+                    curr_right = j
+
+            for j in range(m):
+                total = max(total, heights[j] * (right[j] - left[j]))
+
+        return total
+
+
 test("""
 Given a rows x cols binary matrix filled with 0's and 1's, find the largest rectangle containing only 1's and return its area.
  
