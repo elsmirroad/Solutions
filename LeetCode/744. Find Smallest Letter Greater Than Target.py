@@ -7,12 +7,6 @@ from lc import *
 
 class Solution:
     def nextGreatestLetter(self, letters: List[str], target: str) -> str:
-        nletters = sorted(filter(lambda x: x > target, set(letters)))
-        return str(nletters[0]) if nletters else letters[0]
-
-
-class Solution:
-    def nextGreatestLetter(self, letters: List[str], target: str) -> str:
         nletters=sorted(filter(lambda x: x > target, set(letters)));return str(nletters[0]) if nletters else letters[0]
 
 
