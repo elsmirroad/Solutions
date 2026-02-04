@@ -36,14 +36,14 @@ class Solution:
                 i = q
                 continue
 
-            # Maximum Sum Segment 
+            # Maximum Sum Segment
             current += nums[j]
-            j += 1 
+            j += 1
             acc, mx = 0, 0
             while j < n and nums[j] > nums[j - 1]:
                 acc += nums[j]
                 mx = max(mx, acc)
-                j += 1 
+                j += 1
             current += mx
 
             # Maximize First Segment
