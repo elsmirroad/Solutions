@@ -11,10 +11,16 @@ class Solution:
         results = [0] * n
         for i in range(n):
             step = (i+nums[i]) % n
-            if nums[i] != 0:
-                results[i] = nums[step] 
+            results[i] = nums[step]
         return results
 
+
+class Solution:
+    def constructTransformedArray(self, nums: List[int]) -> List[int]:
+        results = [0] * len(nums)
+        for i, v in enumerate(nums):
+            results[i] = nums[(i+v) % len(nums)]
+        return results
 
 class Solution:
     def constructTransformedArray(self, nums: List[int]) -> List[int]:
