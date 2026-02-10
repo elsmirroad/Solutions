@@ -1,6 +1,6 @@
 from lc import *
 # ============================================================
-# 1285. Balance a Binary Search Tree
+# 1382. Balance a Binary Search Tree
 # https://leetcode.com/problems/balance-a-binary-search-tree/
 # ============================================================
 
