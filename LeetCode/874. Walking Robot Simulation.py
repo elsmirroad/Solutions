@@ -25,7 +25,6 @@ class Solution:
                     direct = direct - 1 if direct > 0 else 3
                 elif command == -1:
                     direct = direct + 1 if direct < 3 else 0
-                total = max(total, abs(x**2) + abs(y**2))
 
             else:
                 nx, ny = d[direct]
@@ -33,8 +32,9 @@ class Solution:
                     if (x + nx, y+ny) in obstacles: break
                     x += nx
                     y += ny
+                total = max(total, x**2 + y**2)
 
-        return max(total, abs(x**2) + abs(y**2))
+        return total
 
 
 test("""
