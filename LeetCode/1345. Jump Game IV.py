@@ -21,19 +21,41 @@ class Solution:
             for _ in range(len(q)):
                 idx = q.popleft()
                 if idx == n-1: return step
-
                 if idx - 1 >= 0 and not seen[idx-1]:
                     seen[idx-1] = True
                     q.append(idx-1)
                 if idx + 1 < n and not seen[idx+1]:
                     seen[idx+1] = True
                     q.append(idx+1)
-
-                if arr[idx] in d:
-                    for neighbor in d[arr[idx]]:
-                        seen[neighbor] = True
-                        q.append(neighbor)
+                for neighbor in d[arr[idx]]:
+                    seen[neighbor] = True
+                    q.append(neighbor)
                     del d[arr[idx]]
+            step += 1
+
+
+class Solution:
+    def minJumps(self, arr: List[int]) -> int:
+        n = len(arr)
+        d = defaultdict(list)
+        for i, v in enumerate(arr):
+            d[v].append(i)
+        q = deque([0])
+        seen = set()
+        step = 0
+
+        while q:
+            for _ in range(len(q)):
+                idx = q.popleft()
+                seen.add(idx)
+                if idx == n-1: return step
+                if idx-1 > 0 and idx-1 not in seen:
+                    q.append(idx-1)
+                if idx+1 < n and idx+1 not in seen:
+                    q.append(idx+1)
+                for nxt in d[arr[idx]]:
+                    q.append(nxt)
+                del d[arr[idx]]
             step += 1
 
 
