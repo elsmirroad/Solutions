@@ -5,3 +5,13 @@ __pycache__
 .python-version
 pyproject.toml
 uv.lock
+
+# Added by Algorepo
+*.exe
+*.o
+*.obj
+*.out
+.pytest_cache/
+.venv/
+__pycache__/
+testers/
