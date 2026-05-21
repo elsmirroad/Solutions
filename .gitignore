@@ -15,3 +15,7 @@ uv.lock
 .venv/
 __pycache__/
 testers/
+
+# Added by Algorepo
+bin/
+obj/
