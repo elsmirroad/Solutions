@@ -20,6 +20,11 @@ class Solution:
         [result := (result[:-1], result*2, result[::-1], result+char)['*#%'.find(char)] for char in s]; return result
 
 
+class Solution:
+    def processStr(self, s: str, result = "") -> str:
+        return reduce(lambda result, char: (result[:-1], result*2, result[::-1], result+char)["*#%".find(char)], s, "")
+
+
 test("""
 You are given a string s consisting of lowercase English letters and the special characters: *, #, and %.
 Build a new string result by processing s according to the following rules from left to right:
