@@ -15,6 +15,13 @@ class Solution:
 
 class Solution:
     def maxIceCream(self, costs: List[int], coins: int) -> int:
+        for i, total in enumerate(accumulate(sorted(costs))):
+            if total > coins: return i
+        else: return len(costs)
+
+
+class Solution:
+    def maxIceCream(self, costs: List[int], coins: int) -> int:
         return sum(0 <= (coins := coins - cost) for cost in sorted(costs))
 
 
